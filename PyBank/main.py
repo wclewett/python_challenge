@@ -37,8 +37,13 @@ max_dec = np.min(delta_list)
 
 with open (output_path, 'w') as txtfile:
     txtfile.write("Fianacial Analysis \n")
-    txtfile.write("---------------------------- \n")
+    txtfile.write("-------------------------------------------------------- \n")
     txtfile.write(f"Total P/L: {total_profit_loss} \n")
-    txtfile.write(f"Average Change (Monthly): $({average_change}) \n")
-    txtfile.write(f"Max Increase in P/L (Monthly): {max_inc_date} ${max_inc} \n")
-    txtfile.write(f"Max Increase in P/L (Monthly): {max_dec_date} $({max_dec}) \n")
+    txtfile.write(f"Average Change (Monthly): $ ({average_change}) \n")
+    txtfile.write(f"Max Increase in P/L (Monthly): {max_inc_date} $ {max_inc} \n")
+    txtfile.write(f"Max Increase in P/L (Monthly): {max_dec_date} $ ({max_dec}) \n")
+    txtfile.write("-------------------------------------------------------- \n")
+
+with open(output_path, "r") as txtfile:
+    results = txtfile.read()
+    print(results)
